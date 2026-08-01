@@ -1,0 +1,70 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.8s ease;
+}
+
+.app.day {
+  background-color: #b9dcff;
+}
+
+.app.night {
+  background-color: #0e1534;
+}
+
+.viewer {
+  width: 100%;
+  height: calc(100% - 50px);
+  position: relative;
+}
+
+.toggle-position {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.view-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+
+  cursor: pointer;
+
+  border: 2px solid white;
+  border-radius: 8px;
+
+  background: transparent;
+  color: white;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 1.5s ease-in-out,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.view-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.view-button:hover {
+  background: white;
+  color: black;
+}
