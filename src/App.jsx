@@ -32,7 +32,7 @@ function Model({ file }) {
     />
   );
 }
-useGLTF.preload("/apartment.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}apartment.glb`);
 
 function Sun({ position, intensity, shadowCamera, targetPosition }) {
   const light = useRef();
@@ -184,7 +184,7 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [started, setStarted] = useState(false);
   const [hideGif, setHideGif] = useState(false);
-  const model = "/apartment.glb";
+  const model = `${import.meta.env.BASE_URL}apartment.glb`;
 
   return (
     <div className={`app ${isDay ? "day" : "night"}`}>
